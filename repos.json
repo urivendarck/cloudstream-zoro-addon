@@ -1,0 +1,14 @@
+{
+    "addons": [
+        {
+            "name": "Zoro.to Addon",
+            "description": "Addon para ver animes subtitulados en espa\u00f1ol desde Zoro.to",
+            "version": "1.0.0",
+            "icon": "https://zoro.to/favicon.ico",
+            "url": "https://tu-servidor.com/zoro-addon.csaddon",
+            "categories": [
+                "anime"
+            ]
+        }
+    ]
+}

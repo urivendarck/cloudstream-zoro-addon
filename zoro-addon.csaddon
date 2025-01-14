@@ -1,0 +1,9 @@
+{
+    "name": "Zoro.to Addon",
+    "version": "1.0.0",
+    "type": "video",
+    "id": "zoro_addon",
+    "baseUrl": "https://zoro.to",
+    "search": "\n        function search(query) {\n            const url = `${baseUrl}/search?keyword=${encodeURIComponent(query)}`;\n            const res = fetch(url);\n            const $ = parseHtml(res);\n            const results = [];\n            \n            $('.flw-item').forEach(item => {\n                const title = $(item).find('.film-name').text();\n                const link = $(item).find('a').attr('href');\n                const poster = $(item).find('img').attr('src');\n                results.push({\n                    title: title,\n                    url: `${baseUrl}${link}`,\n                    poster: poster,\n                    isPlayable: true\n                });\n            });\n            return results;\n        }\n    ",
+    "latestUpdates": "\n        function latestUpdates() {\n            const url = `${baseUrl}/recently-updated`;\n            const res = fetch(url);\n            const $ = parseHtml(res);\n            const updates = [];\n            \n            $('.flw-item').forEach(item => {\n                const title = $(item).find('.film-name').text();\n                const link = $(item).find('a').attr('href');\n                const poster = $(item).find('img').attr('src');\n                updates.push({\n                    title: title,\n                    url: `${baseUrl}${link}`,\n                    poster: poster,\n                    isPlayable: true\n                });\n            });\n            return updates;\n        }\n    "
+}
